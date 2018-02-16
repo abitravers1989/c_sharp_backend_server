@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{554F1242-2E04-46C3-918B-2AF2DC9E98B8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Database/MongoDatabase.cs">
+    <Files>
+      <File FileName="TwitterAPI/Controllers/ValuesController.cs" Line="6" Column="1" />
+      <File FileName="TwitterAPITests/UnitTest1.cs" Line="20" Column="50" />
+      <File FileName="TwitterAPI/Database/Database_1.cs" Line="7" Column="6" />
+      <File FileName="TwitterAPI/Database/MongoDatabase.cs" Line="4" Column="34" />
+      <File FileName="TwitterAPI/Program.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="TwitterAPI/Startup.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="TwitterAPI/appsettings.json" Line="1" Column="1" NotebookId="1" />
+      <File FileName="TwitterAPI/Controllers/TweetController.cs" Line="14" Column="57" NotebookId="1" />
+      <File FileName="TwitterAPI/Database/IDatabase.cs" Line="3" Column="1" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="TwitterAPI" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.TwitterAPI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
