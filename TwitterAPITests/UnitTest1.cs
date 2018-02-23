@@ -11,12 +11,13 @@ namespace TwitterAPITests
         public void GetAllTweets()
         {
             //Arrange
-            var tweetController = new TweetController();
+
             var expectedResult = new string[] { "sheep", "pencilcase" };
-            var myMongoDB = new MongoDatabase();
+            var myMongoDB = new SqlDatabase();
+            var tweetController = new TweetController(myMongoDB);
 
             //Act 
-            var result = tweetController.Get(myMongoDB);
+            var result = tweetController.Get();
 
             // Assert 
             Assert.Equal(expectedResult, result);

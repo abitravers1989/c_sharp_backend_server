@@ -8,10 +8,18 @@ namespace TwitterAPI.Controllers
     [Route("api/tweet")]
     public class TweetController : Controller
     {
+        private readonly IDatabase _database; 
+
+        public TweetController(IDatabase database)
+        { 
+            _database = database; 
+        }
+
+
         //Get api/value
         [HttpGet]
-        public IEnumerable<string> Get(IDatabase database){
-            var databaseResults = database.GetAllTweets();
+        public IEnumerable<string> Get(){
+            var databaseResults = _database.GetAllTweets();
             return databaseResults;
         }
        
