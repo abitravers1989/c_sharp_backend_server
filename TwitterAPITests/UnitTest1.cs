@@ -8,19 +8,35 @@ namespace TwitterAPITests
     public class TweetControllerTests
     {
         [Fact]
-        public void GetAllTweets()
+        public void GetAllTweetsMongoDB()
         {
             //Arrange
 
-            var expectedResult = new string[] { "sheep", "pencilcase" };
-            var myMongoDB = new SqlDatabase();
+            var expectedResultMongo = new string[] { "sheep", "pencilcase" };
+            var myMongoDB = new MongoDatabase();
             var tweetController = new TweetController(myMongoDB);
 
             //Act 
             var result = tweetController.Get();
 
             // Assert 
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResultMongo, result);
+        }
+
+        [Fact]
+        public void GetAllTweetsSqlDB()
+        {
+            //Arrange
+
+            var expectedResultSQL = new string[] { "Tweet1", "Tweet2", "Tweet3" };
+            var mySqlDatabase = new SqlDatabase();
+            var tweetController = new TweetController(mySqlDatabase);
+
+            //Act 
+            var result = tweetController.Get();
+
+            // Assert 
+            Assert.Equal(expectedResultSQL, result);
         }
     }
 }

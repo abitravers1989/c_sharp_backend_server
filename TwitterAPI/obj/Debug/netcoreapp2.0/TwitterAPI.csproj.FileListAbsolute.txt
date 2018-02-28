@@ -8,3 +8,4 @@
 /Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/obj/Debug/netcoreapp2.0/TwitterAPI.AssemblyInfo.cs
 /Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/obj/Debug/netcoreapp2.0/TwitterAPI.dll
 /Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/obj/Debug/netcoreapp2.0/TwitterAPI.pdb
+/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/obj/Debug/netcoreapp2.0/TwitterAPI.csprojResolveAssemblyReference.cache
