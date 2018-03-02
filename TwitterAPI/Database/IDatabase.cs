@@ -6,5 +6,7 @@ namespace TwitterAPI.Database
     public interface IDatabase
     {
         IEnumerable<string> GetAllTweets();
+
+
     }
 }

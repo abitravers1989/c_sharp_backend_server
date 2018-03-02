@@ -16,11 +16,16 @@ namespace TwitterAPI.Controllers
         }
 
 
-        //Get api/value
         [HttpGet]
         public IEnumerable<string> Get(){
             var databaseResults = _database.GetAllTweets();
             return databaseResults;
+        }
+
+        [HttpPost]
+        //telling controller to look in the body of the request for the string
+        public string Post([FromBody]string clientTweet){
+            return clientTweet;
         }
        
     }
