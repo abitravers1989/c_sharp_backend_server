@@ -57,7 +57,7 @@ namespace TwitterAPITests
             var result = tweetController.Post(tweet);
            
             //Assert
-           Assert.IsType<OkObjectResult>(result);
+           Assert.IsType<OkResult>(result);
           
         }
     }

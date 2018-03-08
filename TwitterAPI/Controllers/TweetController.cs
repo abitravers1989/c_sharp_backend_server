@@ -9,7 +9,7 @@ using TwitterAPI.Models;
 
 namespace TwitterAPI.Controllers
 {
-    [Route("api/tweet")]
+    [Route("api/tweets")]
     public class TweetController : Controller
     {
         private readonly IDatabase _database; 
