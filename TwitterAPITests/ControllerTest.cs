@@ -2,7 +2,9 @@ using System;
 using Xunit;
 using TwitterAPI.Controllers;
 using TwitterAPI.Database;
+using TwitterAPI.Models;
 using System.Net;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TwitterAPITests
 {
@@ -46,15 +48,17 @@ namespace TwitterAPITests
         public void PostATweet_WhenPosted_ShouldReturnSameString()
         {
             //Arrange
-            var expectedResult = "tweet2";
+
             var mySqlDatabase = new SqlDatabase();
             var tweetController = new TweetController(mySqlDatabase);
+            var tweet = new Tweet();
 
             //Act
-            var result = tweetController.Post(expectedResult);
-
+            var result = tweetController.Post(tweet);
+           
             //Assert
-            Assert.Equal(expectedResult, result);
+           Assert.IsType<OkObjectResult>(result);
+          
         }
     }
 }

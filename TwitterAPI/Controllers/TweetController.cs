@@ -2,6 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using TwitterAPI.Database;
+using TwitterAPI.Models;
+
+
+
 
 namespace TwitterAPI.Controllers
 {
@@ -24,8 +28,8 @@ namespace TwitterAPI.Controllers
 
         [HttpPost]
         //telling controller to look in the body of the request for the string
-        public string Post([FromBody]string clientTweet){
-            return clientTweet;
+        public IActionResult Post([FromBody]Tweet clientTweet){
+            return Ok();
         }
        
     }
