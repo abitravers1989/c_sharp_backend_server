@@ -1,15 +1,15 @@
-﻿<Properties StartupConfiguration="{4223955E-985B-48CE-A02F-9EF3A3E54283}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Models/Tweet.cs">
+﻿<Properties StartupConfiguration="{4223955E-985B-48CE-A02F-9EF3A3E54283}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/HttpHelper.cs">
     <Files>
-      <File FileName="TwitterAPI/Program.cs" Line="14" Column="6" />
-      <File FileName="TwitterAPI/Controllers/TweetController.cs" Line="6" Column="1" />
+      <File FileName="TwitterAPI/Controllers/TweetController.cs" Line="41" Column="1" />
       <File FileName="TwitterAPI/Database/IDatabase.cs" Line="10" Column="1" />
       <File FileName="TwitterAPI/Database/MongoDatabase.cs" Line="12" Column="8" />
       <File FileName="TwitterAPI/Database/SqlDatabase.cs" Line="12" Column="1" />
-      <File FileName="TwitterAPI/Controllers/ValuesController.cs" Line="27" Column="8" />
+      <File FileName="TwitterAPI/Controllers/ValuesController.cs" Line="9" Column="4" />
       <File FileName="TwitterAPI/Properties/launchSettings.json" Line="22" Column="31" />
-      <File FileName="TwitterAPI/Models/Tweet.cs" Line="1" Column="1" />
-      <File FileName="TwitterAPITests/ControllerTest.cs" Line="25" Column="10" NotebookId="1" />
+      <File FileName="TwitterAPITests/ControllerTest.cs" Line="48" Column="61" />
+      <File FileName="TwitterAPI/HttpHelper.cs" Line="21" Column="36" />
+      <File FileName="TwitterAPITests/HttpHelperTest.cs" Line="17" Column="57" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TwitterAPITests PreferredExecutionTarget="MonoDevelop.Default" />

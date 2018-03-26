@@ -9,10 +9,14 @@ using TwitterAPI.Models;
 
 namespace TwitterAPI.Controllers
 {
+    //[Route("api/[controller]")]
+
     [Route("api/tweets")]
     public class TweetController : Controller
     {
+        
         private readonly IDatabase _database; 
+
 
         public TweetController(IDatabase database)
         { 
