@@ -34,6 +34,21 @@ namespace TwitterAPITests
             //Assert
             Assert.Equal(errorMessage, result);
         }
+
+
+        [Fact]
+        public void MakeHttpRequest_WhenMakesValidAPIRequest_ReturnsString()
+        {
+            //Arrange
+            var httphelper = new HttpHelper();
+            var errorMessage = "Api did not respond";
+
+            //Act
+            var result = httphelper.MakeHttpRequest("https://jsonplaceholder.typicode.com/posts/foo");
+
+            //Assert
+            Assert.Equal(errorMessage, result);
+        }
     }
 
 }

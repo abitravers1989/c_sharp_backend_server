@@ -1,5 +1,5 @@
-﻿<Properties StartupConfiguration="{4223955E-985B-48CE-A02F-9EF3A3E54283}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/HttpHelper.cs">
+﻿<Properties StartupConfiguration="{554F1242-2E04-46C3-918B-2AF2DC9E98B8}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Design.cs">
     <Files>
       <File FileName="TwitterAPI/Controllers/TweetController.cs" Line="41" Column="1" />
       <File FileName="TwitterAPI/Database/IDatabase.cs" Line="10" Column="1" />
@@ -8,8 +8,9 @@
       <File FileName="TwitterAPI/Controllers/ValuesController.cs" Line="9" Column="4" />
       <File FileName="TwitterAPI/Properties/launchSettings.json" Line="22" Column="31" />
       <File FileName="TwitterAPITests/ControllerTest.cs" Line="48" Column="61" />
-      <File FileName="TwitterAPI/HttpHelper.cs" Line="21" Column="36" />
-      <File FileName="TwitterAPITests/HttpHelperTest.cs" Line="17" Column="57" NotebookId="1" />
+      <File FileName="TwitterAPI/HttpHelper.cs" Line="33" Column="57" />
+      <File FileName="TwitterAPITests/HttpHelperTest.cs" Line="51" Column="10" NotebookId="1" />
+      <File FileName="TwitterAPI/Design.cs" Line="1" Column="3" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TwitterAPITests PreferredExecutionTarget="MonoDevelop.Default" />
