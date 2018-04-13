@@ -11,7 +11,7 @@ namespace TwitterAPITests
         {
             //Arrange
             var httphelper = new HttpHelper();
-            var returnResult = "MoneySuperMarket - Helping You Msdfsde The Most Of Your Money";
+            var returnResult = "MoneySuperMarket - Helping You Make The Most Of Your Money";
 
             //Act
             var result = httphelper.MakeHttpRequest("https://jsonplaceholder.typicode.com/posts/1");
@@ -41,13 +41,13 @@ namespace TwitterAPITests
         {
             //Arrange
             var httphelper = new HttpHelper();
-            var errorMessage = "Api did not respond";
+            var message = "MoneySuperMarket - Helping You Make The Most Of Your Money";
 
             //Act
-            var result = httphelper.MakeHttpRequest("https://jsonplaceholder.typicode.com/posts/foo");
+            var result = httphelper.MakeHttpRequest("https://jsonplaceholder.typicode.com/posts");
 
             //Assert
-            Assert.Equal(errorMessage, result);
+            Assert.Equal(message, result);
         }
     }
 

@@ -32,8 +32,14 @@ namespace TwitterAPI.Controllers
 
         [HttpPost]
         //telling controller to look in the body of the request for the string
+        //FromBody maps JSON to C sharp object.. so tweet model in this case
         public IActionResult Post([FromBody]Tweet clientTweet){
-            return Ok();
+            return Ok(clientTweet.Content);
+            //can access info in the head of the request
+
+            //can build logic for if tweet.content is a certain length send error etc
+
+            // then save it to db is it passes all tests
         }
        
     }

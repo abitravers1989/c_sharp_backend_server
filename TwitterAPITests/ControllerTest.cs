@@ -45,7 +45,7 @@ namespace TwitterAPITests
      
 
         [Fact]
-        public void PostATweet_WhenPosted_ShouldReturnSameString()
+        public void PostATweet_WhenPosted_ShouldReturnOKstatusCode()
         {
             //Arrange
 
@@ -59,6 +59,26 @@ namespace TwitterAPITests
             //Assert
            Assert.IsType<OkResult>(result);
           
+        }
+
+        [Fact]
+        public void PostATweet_WhenPosted_ShouldReturnSameString()
+        {
+            //Arrange
+
+            var mySqlDatabase = new SqlDatabase();
+            var tweetController = new TweetController(mySqlDatabase);
+            var tweet = new Tweet();
+            var expectedResult = "this is my tweet";
+            tweet.Content = expectedResult;
+
+            //Act
+            var result = tweetController.Post(tweet);
+            var model = result as OkObjectResult;
+
+            //Assert
+            Assert.Equal(expectedResult, model.Value);
+
         }
     }
 }
