@@ -1,24 +1,29 @@
-﻿<Properties StartupConfiguration="{554F1242-2E04-46C3-918B-2AF2DC9E98B8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Models/Tweet.cs">
+﻿<Properties StartupConfiguration="{4223955E-985B-48CE-A02F-9EF3A3E54283}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Helpers/ValidationHelper.cs">
     <Files>
-      <File FileName="TwitterAPI/Controllers/TweetController.cs" Line="41" Column="1" />
+      <File FileName="TwitterAPI/Controllers/TweetController.cs" Line="46" Column="13" />
       <File FileName="TwitterAPI/Database/IDatabase.cs" Line="10" Column="1" />
       <File FileName="TwitterAPI/Database/MongoDatabase.cs" Line="12" Column="8" />
       <File FileName="TwitterAPI/Database/SqlDatabase.cs" Line="12" Column="1" />
       <File FileName="TwitterAPI/Controllers/ValuesController.cs" Line="9" Column="4" />
       <File FileName="TwitterAPI/Properties/launchSettings.json" Line="22" Column="31" />
+      <File FileName="TwitterAPI/Helpers/ValidationHelper.cs" Line="8" Column="20" />
       <File FileName="TwitterAPI/Design.cs" Line="5" Column="4" NotebookId="1" />
-      <File FileName="TwitterAPITests/ControllerTest.cs" Line="51" Column="13" NotebookId="1" />
+      <File FileName="TwitterAPITests/ControllerTest.cs" Line="2" Column="1" NotebookId="1" />
       <File FileName="TwitterAPI/HttpHelper.cs" Line="47" Column="1" NotebookId="1" />
-      <File FileName="TwitterAPI/Models/Tweet.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="TwitterAPI/Models/Tweet.cs" Line="8" Column="10" NotebookId="1" />
+      <File FileName="TwitterAPITests/ValidationHelperTests.cs" Line="17" Column="13" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
-          <Node name="TwitterAPI" expanded="True" selected="True">
+          <Node name="TwitterAPI" expanded="True">
             <Node name="TwitterAPITests" expanded="True">
               <Node name="TwitterAPITests" expanded="True">
-                <Node name="HttpHelperTest" expanded="True" />
+                <Node name="TweetControllerTests" expanded="True" />
+                <Node name="ValidationHelper" expanded="True">
+                  <Node name="IsValidPost" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

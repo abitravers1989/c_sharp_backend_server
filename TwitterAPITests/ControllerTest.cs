@@ -51,13 +51,14 @@ namespace TwitterAPITests
 
             var mySqlDatabase = new SqlDatabase();
             var tweetController = new TweetController(mySqlDatabase);
-            var tweet = new Tweet();
+            var blogPost = GetValidPost();
+           
 
             //Act
-            var result = tweetController.Post(tweet);
+            var result = tweetController.Post(blogPost);
            
             //Assert
-           Assert.IsType<OkResult>(result);
+           Assert.IsType<OkObjectResult>(result);
           
         }
 
@@ -68,17 +69,28 @@ namespace TwitterAPITests
 
             var mySqlDatabase = new SqlDatabase();
             var tweetController = new TweetController(mySqlDatabase);
-            var tweet = new Tweet();
-            var expectedResult = "this is my tweet";
-            tweet.Content = expectedResult;
+            var blogPost = GetValidPost();
+            var expectedResult = blogPost.Content;
 
             //Act
-            var result = tweetController.Post(tweet);
+            var result = tweetController.Post(blogPost);
             var model = result as OkObjectResult;
 
             //Assert
             Assert.Equal(expectedResult, model.Value);
 
+        }
+
+        private Post GetValidPost()
+        {
+            var blogPost = new Post();
+            var validPost = "blog post 1 gedhsjkdgdhjkhwjksahsdjka";
+            blogPost.Content = validPost;
+            var validDate = new DateTime();
+            blogPost.PostTime = validDate;
+            var userName = "Abi";
+            blogPost.UserName = userName;
+            return blogPost;
         }
     }
 }
