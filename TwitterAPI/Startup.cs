@@ -24,6 +24,7 @@ namespace TwitterAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc();
             services.AddTransient<IDatabase, MongoDatabase>();
         }
@@ -35,6 +36,15 @@ namespace TwitterAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
+            //app.UseCors(options => options.WithOrigins("http://localhost:8080/").AllowAnyMethod());
 
             app.UseMvc();
         }
