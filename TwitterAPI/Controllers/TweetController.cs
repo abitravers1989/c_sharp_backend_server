@@ -14,7 +14,7 @@ namespace TwitterAPI.Controllers
 
     // if this was MVC we would be returning views razors .. point where front and back end meet.
 
-    [Route("api/tweets")]
+    [Route("posts")]
     public class TweetController : Controller
     {
         
@@ -28,14 +28,12 @@ namespace TwitterAPI.Controllers
 
 
         [HttpGet]
-        public IEnumerable<string> Get(){
+        public Post Get(){
             var databaseResults = _database.GetAllTweets();
             return databaseResults;
         }
 
         [HttpPost]
-        //telling controller to look in the body of the request for the string
-        //FromBody maps JSON to C sharp object.. so tweet model in this case
         public IActionResult Post([FromBody]Post clientTweet){
 
             var validationHelper = new ValidationHelper();
@@ -44,23 +42,20 @@ namespace TwitterAPI.Controllers
                 return Ok(clientTweet.Content);
             }
 
-            //client error, 400, client error. invalid info from the client.
             return BadRequest();
-           
-
-            //here do validation .. here is where people inject stuff into your db.
-
-            // instead of sending real post they send js and that would execute js on browsers.
+        }
 
 
-
- 
-            //can access info in the head of the request
-
-            //can build logic for if tweet.content is a certain length send error etc
-
-            // then save it to db is it passes all tests
+        [HttpGet("{name}")]
+        public Post Get(string name)
+        {
+            var post = _database.GetPostByName(name);
+            //eventually will go to db and say get post with this name
+            return post;
         }
        
     }
 }
+
+
+/which DB to use ! 

@@ -22,5 +22,6 @@
 
   <ItemGroup>
     <Compile Remove="Database\Database.cs" />
+    <Compile Remove="Database\SqlDatabase.cs" />
   </ItemGroup>
 </Project>
