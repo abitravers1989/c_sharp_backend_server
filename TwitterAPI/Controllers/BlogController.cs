@@ -15,21 +15,21 @@ namespace TwitterAPI.Controllers
     // if this was MVC we would be returning views razors .. point where front and back end meet.
 
     [Route("posts")]
-    public class TweetController : Controller
+    public class BlogController : Controller
     {
         
         private readonly IDatabase _database; 
 
 
-        public TweetController(IDatabase database)
+        public BlogController(IDatabase database)
         { 
             _database = database; 
         }
 
 
         [HttpGet]
-        public Post Get(){
-            var databaseResults = _database.GetAllTweets();
+        public IEnumerable<Post>  Get(){
+            var databaseResults = _database.GetAllPosts();
             return databaseResults;
         }
 
@@ -58,4 +58,4 @@ namespace TwitterAPI.Controllers
 }
 
 
-/which DB to use ! 
+//which DB to use 

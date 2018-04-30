@@ -6,7 +6,8 @@ namespace TwitterAPI.Database
 {
     public interface IDatabase
     {
-        Post GetAllTweets();
+        IEnumerable<Post> GetAllPosts();
+        //IEnumerable<String> GetAllPosts();
         Post GetPostByName(string name);
 
     }

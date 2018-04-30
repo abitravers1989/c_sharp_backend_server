@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TwitterAPITests
 {
-    public class TweetControllerTests
+    public class DatabaseTests
     {
         [Fact]
         public void GetAllTweetsMongoDB()
