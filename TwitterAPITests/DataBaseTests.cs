@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TwitterAPITests
 {
+
+    //rename to repository 
     public class DatabaseTests
     {
         [Fact]
@@ -23,6 +25,18 @@ namespace TwitterAPITests
 
             // Assert 
             Assert.Equal(expectedResult, result);
+        }
+
+        private Post GetValidPost()
+        {
+            var blogPost = new Post();
+            var validPost = "blog post 1 gedhsjkdgdhjkhwjksahsdjka";
+            blogPost.Content = validPost;
+            var validDate = new DateTime();
+            blogPost.PostTime = validDate;
+            var userName = "Abi";
+            blogPost.UserName = userName;
+            return blogPost;
         }
 
     }

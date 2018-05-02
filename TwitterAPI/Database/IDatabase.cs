@@ -9,6 +9,7 @@ namespace TwitterAPI.Database
         IEnumerable<Post> GetAllPosts();
         //IEnumerable<String> GetAllPosts();
         Post GetPostByName(string name);
+        bool SavePost(Post blogPost);
 
     }
 }

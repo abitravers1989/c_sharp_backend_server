@@ -34,12 +34,14 @@ namespace TwitterAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Post clientTweet){
+        //eventually where we save it
+        public IActionResult Post([FromBody]Post clientBlogPost){
 
             var validationHelper = new ValidationHelper();
 
-            if (validationHelper.IsValidPost(clientTweet)){
-                return Ok(clientTweet.Content);
+            if (validationHelper.IsValidPost(clientBlogPost)){
+                var hasSaved = _database.SavePost(clientBlogPost);
+                if (hasSaved) return Ok("blogpostCreated");
             }
 
             return BadRequest();
