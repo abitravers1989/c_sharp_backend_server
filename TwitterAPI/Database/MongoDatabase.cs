@@ -60,7 +60,7 @@ namespace TwitterAPI.Database
 
 
             //TextWriter writer;
-            using (TextWriter writer = new StreamWriter(@"/Users/abigailtravers/gitDir/TwitterAPI/SampleBlogLog.txt"))
+            using (TextWriter writer = new StreamWriter(@"/XXX/XXXX/gitDir/TwitterAPI/SampleBlogLog.txt"))
             {
                 writer.WriteLine(blogPostToSave.Content);
             }
