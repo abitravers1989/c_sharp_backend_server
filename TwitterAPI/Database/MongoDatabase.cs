@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TwitterAPI.Models;
+using System.IO;
 
 namespace TwitterAPI.Database
 {
@@ -54,8 +55,17 @@ namespace TwitterAPI.Database
             //open db connection 
             //then save object 
             //if suceeds return true.
-            Console.WriteLine(blogPostToSave.Content);
-            return true; 
+
+           // return true; 
+
+
+            //TextWriter writer;
+            using (TextWriter writer = new StreamWriter(@"/Users/abigailtravers/gitDir/TwitterAPI/SampleBlogLog.txt"))
+            {
+                writer.WriteLine(blogPostToSave.Content);
+            }
+
+            return true;
         }
 
        
