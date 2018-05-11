@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using TwitterAPI.Database;
 using TwitterAPI.Models;
 using TwitterAPI.Helpers;
-
-
-
+using Newtonsoft.Json;
 
 namespace TwitterAPI.Controllers
 {
@@ -28,9 +26,10 @@ namespace TwitterAPI.Controllers
 
 
         [HttpGet]
-        public IEnumerable<Post>  Get(){
+        public string Get(){
             var databaseResults = _database.GetAllPosts();
-            return databaseResults;
+            return JsonConvert.SerializeObject(databaseResults);
+           
         }
 
         [HttpPost]
