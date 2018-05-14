@@ -26,7 +26,7 @@ namespace TwitterAPI
         {
             services.AddCors();
             services.AddMvc();
-            services.AddTransient<IDatabase, MongoDatabase>();
+            services.AddTransient<IDatabase, Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

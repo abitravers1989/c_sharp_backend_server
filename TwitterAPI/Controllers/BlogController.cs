@@ -24,7 +24,7 @@ namespace TwitterAPI.Controllers
             _database = database; 
         }
 
-
+        //Attempting to try to return a JSON object instead of an aray
         [HttpGet]
         public string Get(){
             var databaseResults = _database.GetAllPosts();

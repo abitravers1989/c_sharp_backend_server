@@ -5,7 +5,25 @@ test the code .. need to mock file system.
 
 
 turn post method into form of db persistance / saving 
-save Posts to a database 
+
+
+
+
+
+
+
+
+today:
+Add mongo db 
+save Posts to a database.
+1. install mongo get working independently.
+2. hook the two systems up.
+
+
+
+
+
+
 ability to create a post with front end.
 
 
