@@ -22,7 +22,7 @@ save Posts to a database.
 Now: 
 2. hook the two systems up.
 using: http://blog.aspcore.net/post/2017/07/19/mongodb-crud-operations-in-asp-net-core-with-c
-
+How to update info in the database: http://mongodb.github.io/node-mongodb-native/api-articles/nodekoarticle1.html
 
 
 
