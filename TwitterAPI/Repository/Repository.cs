@@ -3,37 +3,45 @@ using System.Collections.Generic;
 using TwitterAPI.Models;
 using System.IO;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Options;
 
 namespace TwitterAPI.Database
 {
 
     //remanme as repository and irepository
-    public class Repository : IDatabase
+    public class Repository : IRepository
     {
-
-        public Post CreatePosts(string blogContent, string blogTitle, string blogUserName)
-        {
-            var blogPost = new Post();
-            blogPost.Content = blogContent;
-            blogPost.PostTime = new DateTime();
-            blogPost.Title = blogTitle;
-            blogPost.UserName = blogUserName;
-            return blogPost;
+        private readonly MongoDatabase _mongoDatabse;
+        public Repository(IOptions<Settings> settings){
+            _mongoDatabse = new MongoDatabase(settings);
         }
 
-        public IEnumerable<Post> CreateListOfPosts()
-        {
-            List<Post> blogPosts = new List<Post>{
-                CreatePosts("This is the first blog post's content. At the min it only contains string", "Post Number 1", "Abi"),
-                CreatePosts("This is another blog post. NUMBER 2. Still just a string, boooo.", "Post Number 2", "Abi"),
-                CreatePosts(" NUMBER 3. Nothing fun here.", "Post Number 3", "Abi")
-            };
+        //public Post CreatePosts(string blogContent, string blogTitle, string blogUserName)
+        //{
+        //    var blogPost = new Post();
+        //    blogPost.Content = blogContent;
+        //    blogPost.PostTime = new DateTime();
+        //    blogPost.Title = blogTitle;
+        //    blogPost.UserName = blogUserName;
+        //    return blogPost;
+        //}
 
-            return blogPosts;
-        }
-        
-        public IEnumerable<Post> GetAllPosts(){
-             return CreateListOfPosts();
+        //public IEnumerable<Post> CreateListOfPosts()
+        //{
+        //    List<Post> blogPosts = new List<Post>{
+        //        CreatePosts("This is the first blog post's content. At the min it only contains string", "Post Number 1", "Abi"),
+        //        CreatePosts("This is another blog post. NUMBER 2. Still just a string, boooo.", "Post Number 2", "Abi"),
+        //        CreatePosts(" NUMBER 3. Nothing fun here.", "Post Number 3", "Abi")
+        //    };
+
+        //    return blogPosts;
+        //}
+
+
+
+        public IEnumerable<Post> GetAllPosts()
+        {
+            return _mongoDatabse.Posts.Count(x => true).ToList();
         }
 
         public Post GetPostByName(string name ){

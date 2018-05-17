@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
-    <Folder Include="Database\" />
+    <Folder Include="Repository\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
   </ItemGroup>
@@ -24,6 +24,6 @@
 
   <ItemGroup>
     <Compile Remove="Database\Database.cs" />
-    <Compile Remove="Database\SqlDatabase.cs" />
+  
   </ItemGroup>
 </Project>

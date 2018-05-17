@@ -16,7 +16,7 @@ namespace TwitterAPITests
             //Arrange
 
             var expectedResultMongo = new string[] { "sheep", "pencilcase" };
-            var myMongoDB = new MongoDatabase();
+            var myMongoDB = new Repository();
             var tweetController = new TweetController(myMongoDB);
 
             //Act 

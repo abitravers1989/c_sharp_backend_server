@@ -16,7 +16,7 @@ namespace TwitterAPITests
         public void CreateListOfPosts()
         {
             //Arrange
-            var myMongoDB = new MongoDatabase();
+            var myMongoDB = new Repository();
             var expectedResult = new Post[] { "This is the first blog post's content. At the min it only contains string", "Post Number 1", "Abi" };
 
 

@@ -16,10 +16,10 @@ namespace TwitterAPI.Controllers
     public class BlogController : Controller
     {
         
-        private readonly IDatabase _database; 
+        private readonly IRepository _database; 
 
 
-        public BlogController(IDatabase database)
+        public BlogController(IRepository database)
         { 
             _database = database; 
         }

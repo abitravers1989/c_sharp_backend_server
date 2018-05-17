@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TwitterAPI.Database;
+using TwitterAPI.Models;
 
 namespace TwitterAPI
 {
@@ -26,7 +27,15 @@ namespace TwitterAPI
         {
             services.AddCors();
             services.AddMvc();
-            services.AddTransient<IDatabase, Repository>();
+            services.Configure<Settings>(Options =>
+            {
+                Options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+                Options.Database = Configuration.GetSection("MongoConnection:Database").Value;
+            });
+
+            services.AddTransient<IRepository, Repository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,7 +4,7 @@ using TwitterAPI.Models;
 
 namespace TwitterAPI.Database
 {
-    public interface IDatabase
+    public interface IRepository
     {
         IEnumerable<Post> GetAllPosts();
         //IEnumerable<String> GetAllPosts();
