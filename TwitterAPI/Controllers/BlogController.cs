@@ -5,6 +5,7 @@ using TwitterAPI.Database;
 using TwitterAPI.Models;
 using TwitterAPI.Helpers;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace TwitterAPI.Controllers
 {
@@ -26,10 +27,8 @@ namespace TwitterAPI.Controllers
 
         //Attempting to try to return a JSON object instead of an aray
         [HttpGet]
-        public string Get(){
-            var databaseResults = _database.GetAllPosts();
-            return JsonConvert.SerializeObject(databaseResults);
-           
+        public Task<IEnumerable<Post>>Get() {
+            return _database.GetAllPosts();
         }
 
         [HttpPost]

@@ -4,6 +4,10 @@ using TwitterAPI.Models;
 using System.IO;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Options;
+using System.Threading.Tasks;
+using MongoDB.Driver;
+using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 
 namespace TwitterAPI.Database
 {
@@ -39,9 +43,10 @@ namespace TwitterAPI.Database
 
 
 
-        public IEnumerable<Post> GetAllPosts()
+        public async Task<IEnumerable<Post>> GetAllPosts()
         {
-            return _mongoDatabse.Posts.Count(x => true).ToList();
+            //return _mongoDatabse.Posts.Count(x => true).ToList();
+            return await _mongoDatabse.posts.Find(x => true).ToListAsync();
         }
 
         public Post GetPostByName(string name ){

@@ -23,7 +23,7 @@ namespace TwitterAPI.Database
             }
         }
 
-        public IMongoCollection<Post> Posts => _database.GetCollection<Post>("Posts");
+        public IMongoCollection<Post> posts => _database.GetCollection<Post>("Posts");
     }
 }
 
