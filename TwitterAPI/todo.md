@@ -6,24 +6,38 @@ test the code .. need to mock file system.
 
 turn post method into form of db persistance / saving 
 
-
-
-
-
-
-
-
-
 Add mongo db 
 save Posts to a database.
 1. install mongo get working independently. Done 
-
-
-Now: 
+ 
 2. hook the two systems up.
 
 make async instead 
 using: http://blog.aspcore.net/post/2017/07/19/mongodb-crud-operations-in-asp-net-core-with-c
+
+NOW
+Get and get by title working. 
+
+
+To do: 
+
+Do Post 
+Update
+Delete.
+Test it 
+Refactor
+depolying it.
+
+
+
+
+
+
+
+
+
+
+
 
 
 

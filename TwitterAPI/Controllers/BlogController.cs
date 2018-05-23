@@ -47,12 +47,15 @@ namespace TwitterAPI.Controllers
 
 
         [HttpGet("{name}")]
-        public Post Get(string name)
+        public async Task<IActionResult> Get(string name)
         {
-            var post = _database.GetPostByName(name);
-            //eventually will go to db and say get post with this name
-            return post;
+            var foundPost = await _database.GetPostByTitle(name);
+            if (foundPost == null){
+                return NotFound("not found");
+            }
+            return Ok(foundPost);
         }
+
        
     }
 }

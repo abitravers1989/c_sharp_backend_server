@@ -49,20 +49,16 @@ namespace TwitterAPI.Database
             return await _mongoDatabse.posts.Find(x => true).ToListAsync();
         }
 
-        public Post GetPostByName(string name ){
-            var newBlogPost = new Post();
-
-            newBlogPost.Title = name;
-            newBlogPost.Content = "Blog post with name set";
-            return newBlogPost;
-
-            //eventually have if name doesn't exist then return error / 404
-            //if it does get it
-            //is valid request ? 
+        public async Task<Post> GetPostByTitle(string title ){
+          //  return await _mongoDatabse.posts.Find(x => x.Title == title).FirstOrDefaultAsync();
+            var returnedThing = await _mongoDatabse.posts.Find(x => x.Title == title).FirstOrDefaultAsync();
+            return returnedThing;
         }
 
         //in frontend write a ajax request in front end which will send stuff to this api 
         //this will take json and turn it into an object.. deserialise json into object 
+
+       
 
         public bool SavePost(Post blogPostToSave){
             //this is where db code will go

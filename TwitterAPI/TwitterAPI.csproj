@@ -26,5 +26,6 @@
     <Compile Remove="Database\Database.cs" />
   
     <Compile Remove="Repository\Database.cs" />
+    <Compile Remove="Controllers\ValuesController.cs" />
   </ItemGroup>
 </Project>
