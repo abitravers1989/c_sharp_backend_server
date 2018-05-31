@@ -21,19 +21,27 @@ Get and get by title working.
 
 To do: 
 
-Do Post 
+from front end : GET
+Serve the frontend blog page ... Listen for query param..
+then serve a certain page.
+when click on a link it passes in identifier as query param.
+
+Fix error with postTime
+Post 
 Update
 Delete.
+Error handling.
+
+deploy mongo - do don't have to mannually run it
+
 Test it 
 Refactor
 depolying it.
 
+Deploy app and DB in docker containers 
+orchestrate them with docker compose
 
-
-
-
-
-
+ 
 
 
 
@@ -45,11 +53,11 @@ How to update info in the database: http://mongodb.github.io/node-mongodb-native
 
 
 
+Learnings from GET:
 
+About action results (its cool that you can see them in the network tab like when your looking on the front end)  
+and the arrow functions (how the first thing is the object / the thing you would be passing to it in the parenthesis.. 
+then after the arrow is the function (with the return implied ?)! Also how it’s better to make things async so you can 
+handle lots of requests and await is like a bookmark ... so where you’d put a hold when you know something is going to take
+ a long time? Also errors and what they actually are and bubbling up means through the program to the interface).
 
-ability to create a post with front end.
-
-
-
-Future features: 
-autocomplete search functionality 

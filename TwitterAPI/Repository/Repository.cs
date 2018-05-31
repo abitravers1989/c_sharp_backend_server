@@ -20,7 +20,51 @@ namespace TwitterAPI.Database
             _mongoDatabse = new MongoDatabase(settings);
         }
 
-        //public Post CreatePosts(string blogContent, string blogTitle, string blogUserName)
+
+        public async Task<IEnumerable<Post>> GetAllPosts()
+        {
+            //return _mongoDatabse.Posts.Count(x => true).ToList();
+            return await _mongoDatabse.posts.Find(x => true).ToListAsync();
+        }
+
+        public async Task<Post> GetPostByTitle(string title ){
+          
+            var returnedThing = await _mongoDatabse.posts.Find(x => x.Title == title).FirstOrDefaultAsync();
+            return returnedThing;
+        }
+
+        //in frontend write a ajax request in front end which will send stuff to this api 
+        //this will take json and turn it into an object.. deserialise json into object 
+
+       
+
+        public bool SavePost(Post blogPostToSave){
+            //this is where db code will go
+            //open db connection 
+            //then save object 
+            //if suceeds return true.
+
+           // return true; 
+
+         
+
+
+            //TextWriter writer;
+            using (TextWriter writer = new StreamWriter(@"/Users/abigailtravers/gitDir/TwitterAPI/SampleBlogLog.txt"))
+            {
+                writer.WriteLine(blogPostToSave.Content);
+            }
+
+            return true;
+        }
+
+       
+    }
+}
+
+
+
+//public Post CreatePosts(string blogContent, string blogTitle, string blogUserName)
         //{
         //    var blogPost = new Post();
         //    blogPost.Content = blogContent;
@@ -41,43 +85,3 @@ namespace TwitterAPI.Database
         //    return blogPosts;
         //}
 
-
-
-        public async Task<IEnumerable<Post>> GetAllPosts()
-        {
-            //return _mongoDatabse.Posts.Count(x => true).ToList();
-            return await _mongoDatabse.posts.Find(x => true).ToListAsync();
-        }
-
-        public async Task<Post> GetPostByTitle(string title ){
-          //  return await _mongoDatabse.posts.Find(x => x.Title == title).FirstOrDefaultAsync();
-            var returnedThing = await _mongoDatabse.posts.Find(x => x.Title == title).FirstOrDefaultAsync();
-            return returnedThing;
-        }
-
-        //in frontend write a ajax request in front end which will send stuff to this api 
-        //this will take json and turn it into an object.. deserialise json into object 
-
-       
-
-        public bool SavePost(Post blogPostToSave){
-            //this is where db code will go
-            //open db connection 
-            //then save object 
-            //if suceeds return true.
-
-           // return true; 
-
-
-            //TextWriter writer;
-            using (TextWriter writer = new StreamWriter(@"/Users/abigailtravers/gitDir/TwitterAPI/SampleBlogLog.txt"))
-            {
-                writer.WriteLine(blogPostToSave.Content);
-            }
-
-            return true;
-        }
-
-       
-    }
-}
