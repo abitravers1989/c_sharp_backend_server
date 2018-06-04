@@ -40,7 +40,7 @@ depolying it.
 
 Deploy app and DB in docker containers 
 orchestrate them with docker compose
-
+deployment and hosting - deploying a docker container
  
 
 

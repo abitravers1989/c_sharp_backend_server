@@ -16,48 +16,93 @@ namespace TwitterAPI.Controllers
     [Route("posts")]
     public class BlogController : Controller
     {
-        
-        private readonly IRepository _database; 
+
+        private readonly IRepository _database;
 
 
         public BlogController(IRepository database)
-        { 
-            _database = database; 
+        {
+            _database = database;
         }
 
         //Attempting to try to return a JSON object instead of an aray
         [HttpGet]
-        public Task<IEnumerable<Post>>Get() {
+        public Task<IEnumerable<Post>> Get()
+        {
             return _database.GetAllPosts();
         }
 
-        [HttpPost]
-        //eventually where we save it
-        public IActionResult Post([FromBody]Post clientBlogPost){
-
-            var validationHelper = new ValidationHelper();
-
-            if (validationHelper.IsValidPost(clientBlogPost)){
-                var hasSaved = _database.SavePost(clientBlogPost);
-                if (hasSaved) return Ok("blogpostCreated");
-            }
-
-            return BadRequest();
-        }
 
 
+        //grab path from url 
         [HttpGet("{name}")]
         public async Task<IActionResult> Get(string name)
         {
-            var foundPost = await _database.GetPostByTitle(name);
-            if (foundPost == null){
-                return NotFound("not found");
+            try
+            {
+                var foundPost = await _database.GetPostByTitle(name);
+                if (foundPost == null)
+                {
+                    return NotFound("not found");
+                }
+                return Ok(foundPost);
             }
-            return Ok(foundPost);
+            catch (Exception ex)
+            {
+                return Json(ex.ToString());
+            }
         }
 
+
+        [HttpPost]
+    
+        //eventually where we save it
+        public async Task<IActionResult> Post([FromBody]Post clientBlogPost)
+        {
+            try
+            {
+
+                var validationHelper = new ValidationHelper();
+
+                if (validationHelper.IsValidPost(clientBlogPost))
+                {
+                    clientBlogPost.PostTime = DateTime.UtcNow;
+                    await _database.AddPostToDatabase(clientBlogPost);
+                    //var hasSaved = _database.SavePost(clientBlogPost);
+                    //if (hasSaved) return Ok("Blog Post Created");
+                    return Ok($"Blog Post saved to db find this at /posts/{clientBlogPost.Title}");
+                }
+          
+                    return BadRequest("Please enter a valid post");
+
+            }
+
+             catch (Exception ex)
+               {
+                return BadRequest(ex.ToString());
+                }
+                
+            }
+
        
-    }
+        [HttpPut("{name}")]
+        public async Task<IActionResult> UpdateContent([FromBody]Post blogPost){
+            //updated time
+            blogPost.PostTime = DateTime.UtcNow;
+            var result = await _database.UpdateContent(blogPost);
+            if (result){
+                return Ok($"blog post updated and found at /posts/{blogPost.Title}");
+            }
+            return BadRequest("Please enter valid post");
+
+        }
+        
+        
+        
+        
+        }
+    
+    
 }
 
 

@@ -10,7 +10,9 @@ namespace TwitterAPI.Database
         Task<IEnumerable<Post>> GetAllPosts();
         //IEnumerable<String> GetAllPosts();
         Task<Post> GetPostByTitle(string title);
-        bool SavePost(Post blogPost);
+   
+        Task AddPostToDatabase(Post blogPost);
+        Task<bool> UpdateContent(Post blogPost);
 
     }
 }

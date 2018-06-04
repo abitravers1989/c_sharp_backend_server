@@ -7,7 +7,7 @@ namespace TwitterAPI.Helpers
     {
        public bool IsValidPost(Post blogPost)
         {
-            if (IsValidContent(blogPost) && IsValidDate(blogPost) && IsValidUser(blogPost))
+            if (IsValidContent(blogPost) && IsValidUser(blogPost))
             {
                 return true;
             }
@@ -24,21 +24,7 @@ namespace TwitterAPI.Helpers
             
         }
        
-        public bool IsValidDate(Post blogPost)
-        {
-            if (blogPost.PostTime == null)
-            {
-                return false;
-            }
-
-            if  (blogPost.PostTime > DateTime.Now)
-            {
-                return false;
-            }
-
-
-            return true;
-        }
+  
 
         public bool IsValidUser(Post blogPost)
         {
