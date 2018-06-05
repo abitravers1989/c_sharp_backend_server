@@ -55,7 +55,7 @@ namespace TwitterAPI.Controllers
 
 
         [HttpPost]
-    
+
         //eventually where we save it
         public async Task<IActionResult> Post([FromBody]Post clientBlogPost)
         {
@@ -72,38 +72,62 @@ namespace TwitterAPI.Controllers
                     //if (hasSaved) return Ok("Blog Post Created");
                     return Ok($"Blog Post saved to db find this at /posts/{clientBlogPost.Title}");
                 }
-          
-                    return BadRequest("Please enter a valid post");
+
+                return BadRequest("Please enter a valid post");
 
             }
 
-             catch (Exception ex)
-               {
+            catch (Exception ex)
+            {
                 return BadRequest(ex.ToString());
-                }
-                
             }
 
-       
+        }
+
+
         [HttpPut("{name}")]
-        public async Task<IActionResult> UpdateContent([FromBody]Post blogPost){
+        public async Task<IActionResult> UpdateContent([FromBody]Post blogPost)
+        {
             //updated time
-            blogPost.PostTime = DateTime.UtcNow;
-            var result = await _database.UpdateContent(blogPost);
-            if (result){
+            blogPost.TimeUpdated = DateTime.UtcNow;
+            var result = await _database.UpdateBlogContent(blogPost);
+            if (result)
+            {
                 return Ok($"blog post updated and found at /posts/{blogPost.Title}");
             }
-            return BadRequest("Please enter valid post");
+            return BadRequest("Please enter valid post content");
 
         }
-        
-        
-        
-        
+
+
+
+        [HttpPut("{name}")]
+        public async Task<IActionResult> UpdateTitle([FromBody]Post blogPost)
+        {
+            try
+            {
+                blogPost.TimeUpdated = DateTime.UtcNow;
+                var result = await _database.UpdateBlogTitle(blogPost);
+                if (result)
+                {
+                    return Ok($"blog post updated and found at /posts/{blogPost.Title}");
+                }
+
+                return BadRequest("Please enter a valid post");
+            }
+
+                catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+
         }
-    
-    
+    }
+
+
+
+
+
 }
-
 
 //which DB to use 

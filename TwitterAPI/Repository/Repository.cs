@@ -38,9 +38,17 @@ namespace TwitterAPI.Database
         }
 
 
-        public async Task<bool> UpdateContent(Post blogPost){
+        public async Task<bool> UpdateBlogContent(Post blogPost){
             var getPostFromDB = GetPostByTitle(blogPost.Title);
             await _mongoDatabse.posts.UpdateOneAsync(post => post.Title == blogPost.Title, Builders<Post>.Update.Set(post => post.Content, blogPost.Content));
+            return true;
+        }
+
+        public async Task<bool> UpdateBlogTitle(Post blogPost){
+            var getPostFromDB = GetPostByTitle(blogPost.Title);
+            var filter = Builders<Post>.Filter.Eq("Title", blogPost.Title);
+            var update = Builders<Post>.Update.Set(xx => xx.Title, blogPost.Title);
+            await _mongoDatabse.posts.UpdateOneAsync(filter, update);
             return true;
         }
     }

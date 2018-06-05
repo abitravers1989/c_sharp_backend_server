@@ -12,7 +12,8 @@ namespace TwitterAPI.Database
         Task<Post> GetPostByTitle(string title);
    
         Task AddPostToDatabase(Post blogPost);
-        Task<bool> UpdateContent(Post blogPost);
+        Task<bool> UpdateBlogContent(Post blogPost);
+        Task<bool> UpdateBlogTitle(Post blogPost);
 
     }
 }
