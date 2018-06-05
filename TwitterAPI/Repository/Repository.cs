@@ -44,12 +44,17 @@ namespace TwitterAPI.Database
             return true;
         }
 
-        public async Task<bool> UpdateBlogTitle(Post blogPost){
-            var getPostFromDB = GetPostByTitle(blogPost.Title);
-            var filter = Builders<Post>.Filter.Eq("Title", blogPost.Title);
-            var update = Builders<Post>.Update.Set(xx => xx.Title, blogPost.Title);
-            await _mongoDatabse.posts.UpdateOneAsync(filter, update);
-            return true;
+        //public async Task<bool> UpdateBlogTitle(Post blogPost){
+        //    var getPostFromDB = GetPostByTitle(blogPost.Title);
+        //    var filter = Builders<Post>.Filter.Eq("Title", blogPost.Title);
+        //    var update = Builders<Post>.Update.Set(xx => xx.Title, blogPost.Title);
+        //    await _mongoDatabse.posts.UpdateOneAsync(filter, update);
+        //    return true;
+        //}
+
+        public async Task<DeleteResult> RemovePost(string title){
+            var filter = Builders<Post>.Filter.Eq("Title", title);
+            return await _mongoDatabse.posts.DeleteOneAsync(filter);
         }
     }
 }

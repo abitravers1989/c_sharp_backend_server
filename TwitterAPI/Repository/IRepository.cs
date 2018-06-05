@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MongoDB.Driver;
 using TwitterAPI.Models;
 
 namespace TwitterAPI.Database
@@ -10,10 +11,8 @@ namespace TwitterAPI.Database
         Task<IEnumerable<Post>> GetAllPosts();
         //IEnumerable<String> GetAllPosts();
         Task<Post> GetPostByTitle(string title);
-   
         Task AddPostToDatabase(Post blogPost);
         Task<bool> UpdateBlogContent(Post blogPost);
-        Task<bool> UpdateBlogTitle(Post blogPost);
-
+        Task<DeleteResult> RemovePost(string blogPostTitle);
     }
 }

@@ -99,29 +99,41 @@ namespace TwitterAPI.Controllers
 
         }
 
-
-
-        [HttpPut("{name}")]
-        public async Task<IActionResult> UpdateTitle([FromBody]Post blogPost)
-        {
-            try
-            {
-                blogPost.TimeUpdated = DateTime.UtcNow;
-                var result = await _database.UpdateBlogTitle(blogPost);
-                if (result)
-                {
-                    return Ok($"blog post updated and found at /posts/{blogPost.Title}");
-                }
-
-                return BadRequest("Please enter a valid post");
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody]string blogPostTitle){
+            try {
+                if (string.IsNullOrWhiteSpace(blogPostTitle))
+                    return BadRequest("Post title is missing");
+                await _database.RemovePost(blogPostTitle);
+                return Ok("Your product has been deleted successfully");
             }
-
-                catch (Exception ex)
-            {
+            catch (Exception ex){
                 return BadRequest(ex.ToString());
             }
-
         }
+
+
+
+        //public async Task<IActionResult> UpdateTitle([FromBody]Post blogPost)
+        //{
+        //    try
+        //    {
+        //        blogPost.TimeUpdated = DateTime.UtcNow;
+        //        var result = await _database.UpdateBlogTitle(blogPost);
+        //        if (result)
+        //        {
+        //            return Ok($"blog post updated and found at /posts/{blogPost.Title}");
+        //        }
+
+        //        return BadRequest("Please enter a valid post");
+        //    }
+
+        //        catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.ToString());
+        //    }
+
+        //}
     }
 
 
