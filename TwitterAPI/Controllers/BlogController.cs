@@ -6,43 +6,40 @@ using TwitterAPI.Models;
 using TwitterAPI.Helpers;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using TwitterAPI.Logging;
 
 namespace TwitterAPI.Controllers
 {
-    //[Route("api/[controller]")]
-
-    // if this was MVC we would be returning views razors .. point where front and back end meet.
-    //[RequireHttps]
     [Route("posts")]
     public class BlogController : Controller
     {
 
         private readonly IRepository _database;
+        private readonly ILogger _logger;
 
-
-        public BlogController(IRepository database)
+        public BlogController(IRepository database, ILoggerFactory logger)
         {
             _database = database;
+            _logger = logger.CreateLogger("TwitterAPI.Controllers.BlogController");
         }
 
-        //Attempting to try to return a JSON object instead of an aray
         [HttpGet]
         public Task<IEnumerable<Post>> Get()
         {
             return _database.GetAllPosts();
         }
-
-
-
-        //grab path from url 
+         
         [HttpGet("{name}")]
         public async Task<IActionResult> Get(string name)
         {
+            _logger.LogInformation(LoggingEvents.GetItem, "Getting item {ID}", id);
             try
             {
                 var foundPost = await _database.GetPostByTitle(name);
                 if (foundPost == null)
                 {
+                    _logger.LogWarning(LoggingEvents.GetItemNotFound, "GetById({ID}) NOT FOUND", id);
                     return NotFound("not found");
                 }
                 return Ok(foundPost);
