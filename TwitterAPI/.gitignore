@@ -1,0 +1,10 @@
+﻿*.blog.csr
+*.blog.key
+*.localhost.crt
+*.localhost.csr
+.localhost.key
+.localhost.pfx
+.server.crt
+.server.csr
+.server.key
+.server.pass.key
