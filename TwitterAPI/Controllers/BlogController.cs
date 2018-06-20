@@ -18,10 +18,10 @@ namespace TwitterAPI.Controllers
         private readonly IRepository _database;
         private readonly ILogger _logger;
 
-        public BlogController(IRepository database, ILoggerFactory logger)
+        public BlogController(IRepository database, ILogger<BlogController> logger)
         {
             _database = database;
-            _logger = logger.CreateLogger("TwitterAPI.Controllers.BlogController");
+            _logger = logger;
         }
 
         [HttpGet]
@@ -33,19 +33,20 @@ namespace TwitterAPI.Controllers
         [HttpGet("{name}")]
         public async Task<IActionResult> Get(string name)
         {
-            _logger.LogInformation(LoggingEvents.GetItem, "Getting item {ID}", id);
+            _logger.LogInformation(LoggingEvents.GetItem, "Getting post {name}", name);
             try
             {
                 var foundPost = await _database.GetPostByTitle(name);
                 if (foundPost == null)
                 {
-                    _logger.LogWarning(LoggingEvents.GetItemNotFound, "GetById({ID}) NOT FOUND", id);
+                    _logger.LogWarning(LoggingEvents.GetItemNotFound, "Get({name}) NOT FOUND", name);
                     return NotFound("not found");
                 }
                 return Ok(foundPost);
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LoggingEvents.GetItemNotFound, ex, "Get({name}) NOT FOUND", name);
                 return Json(ex.ToString());
             }
         }
