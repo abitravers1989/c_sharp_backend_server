@@ -49,6 +49,27 @@ deployment and hosting - deploying a docker container
 
 
 
+
+ To do 
+ make app use https
+
+ secure PUT and Delete 
+ bearer token authentication implementation C sharp
+ https://andrewlock.net/creating-and-trusting-a-self-signed-certificate-on-linux-for-use-in-kestrel-and-asp-net-core/
+
+
+
+
+
+
+
+
+ https://www.humankode.com/asp-net-core/develop-locally-with-https-self-signed-certificates-and-asp-net-core
+
+
+
+
+
 How to update info in the database: http://mongodb.github.io/node-mongodb-native/api-articles/nodekoarticle1.html
 
 

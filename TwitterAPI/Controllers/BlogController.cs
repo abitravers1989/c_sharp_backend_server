@@ -12,7 +12,7 @@ namespace TwitterAPI.Controllers
     //[Route("api/[controller]")]
 
     // if this was MVC we would be returning views razors .. point where front and back end meet.
-
+    //[RequireHttps]
     [Route("posts")]
     public class BlogController : Controller
     {
