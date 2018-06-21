@@ -1,4 +1,32 @@
-﻿
+﻿TODO 
+1.Check tag is valid category.
+2.Deploy 
+3.Hack in and try to ruin.
+4.Make safe 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 turn text file into CSV so write out name, content, author as comma seperated values 
 
 test the code .. need to mock file system.

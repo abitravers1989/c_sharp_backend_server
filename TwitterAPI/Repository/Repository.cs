@@ -33,7 +33,10 @@ namespace TwitterAPI.Database
         }
 
         public async Task AddPostToDatabase(Post blogPost){
+            
            await _mongoDatabse.posts.InsertOneAsync(blogPost);
+            public CategoryTag categoryTags { get; set; }
+            //if blogPost.CategoryTag is not part of .tags then throw error 
 
         }
 
