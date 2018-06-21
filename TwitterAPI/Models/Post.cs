@@ -12,5 +12,6 @@ namespace TwitterAPI.Models
         public DateTime? PostTime { get; set; }
         public string Title { get; set; }
         public DateTime? TimeUpdated { get; set; }
+        public CategoryTag categoryTags { get; set; }
     }
 }
