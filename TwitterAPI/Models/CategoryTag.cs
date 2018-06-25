@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace TwitterAPI.Models
 {
     public class CategoryTag
@@ -28,6 +30,6 @@ namespace TwitterAPI.Models
             "Html",
             "DataBases",
             "TDD"
-        }
+        };
     }
 }

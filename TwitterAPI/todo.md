@@ -8,21 +8,37 @@
 
 
 
+Launching Friday 22nd July
+
+EC2 aws = virtual machines
+
+insance goes into vpc - virtual private cloud 
+security group like a firewall that goes around instance 
+ssh - allow connections from port 22 from anywhere on the internet source 0.0.0.0/0
+once set up instance need to go and disable SSHs 
+Most common hack is people would start mining crypto on your instanse or doing crimia activity from your vm as they can just keep guessing passwords 
+
+need to add http so people can access it through iternet instead of just through shh
+
+will allow connections from port 80 (the standard port for http traffic)- that what the browser runs on 
+
+https runs on 443 
 
 
+if you wanted to set the Shh to one IP address ie your home then you set it to this IP
+then set up a vpn which directs traffic to a comp or rasberry pie running at your home address then use this machine to access your insanstance.
+setup a comp at home. SSH into your home comp with 
+VPN is just SSH - can use a password 
+or a pen key - public private keys. -- way to do authentication!! 
+public private keys are more robust. (encrytion and alice and bob thing )
 
+public key that aws will have then a private key that only i will have 
+when i do sshing then i use this private key to get into it
 
+Public DNS: ec2-34-245-139-42.eu-west-1.compute.amazonaws.com (can see instance if put this address in browser address bar)
+need to make copy of private key ... .pem 
 
-
-
-
-
-
-
-
-
-
-
+--------
 
 
 

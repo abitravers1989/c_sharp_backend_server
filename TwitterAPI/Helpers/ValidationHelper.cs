@@ -7,7 +7,7 @@ namespace TwitterAPI.Helpers
     {
        public bool IsValidPost(Post blogPost)
         {
-            if (IsValidContent(blogPost) && IsValidUser(blogPost))
+            if (IsValidContent(blogPost) && IsValidUser(blogPost) && IsValidTitle((blogPost)))
             {
                 return true;
             }
@@ -24,12 +24,24 @@ namespace TwitterAPI.Helpers
             
         }
        
-  
-
         public bool IsValidUser(Post blogPost)
         {
             return blogPost.UserName == "Abi";
         }
+
+        public bool IsValidTitle(Post blogPost)
+        {
+            if (String.IsNullOrEmpty(blogPost.Title))
+            {
+                return false;
+            }
+            return true;
+
+        }
+
+        //public bool IsValidCategory(Post blogPost){
+        //    if (blogPost.categoryTags != CategoryTag.tags)
+        //}
     }
 }
 
