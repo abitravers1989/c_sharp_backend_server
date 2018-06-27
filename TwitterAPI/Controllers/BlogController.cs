@@ -11,6 +11,16 @@ using TwitterAPI.Logging;
 
 namespace TwitterAPI.Controllers
 {
+    [Route("")]
+    public class HomeController : Controller
+    {
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("This is the Home Page!");
+        }
+    }
+
     [Route("posts")]
     public class BlogController : Controller
     {

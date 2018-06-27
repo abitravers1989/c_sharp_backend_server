@@ -9,6 +9,7 @@
     <Folder Include="Repository\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,5 +28,19 @@
   
     <Compile Remove="Repository\Database.cs" />
     <Compile Remove="Controllers\ValuesController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="https.config" />
+    <None Remove="server.crt" />
+    <None Remove="server.csr" />
+    <None Remove="server.key" />
+    <None Remove="server.pass.key" />
+    <None Remove="localhost.crt" />
+    <None Remove="localhost.csr" />
+    <None Remove="localhost.key" />
+    <None Remove="localhost.pfx" />
+    <None Remove="blog.csr" />
+    <None Remove="blog.key" />
+    <None Remove="appsettings.Live.json" />
   </ItemGroup>
 </Project>

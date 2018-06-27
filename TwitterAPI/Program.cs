@@ -21,22 +21,6 @@ namespace TwitterAPI
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                   .UseStartup<Startup>()
-                .Build();
-        //           .UseKestrel(options =>
-        //           {
-        //           options.ConfigureEndpoints());
-        //}
-                 
+                .Build();                 
     }
 }
-
-//{
-//    // Configure the Url and ports to bind to
-//    // This overrides calls to UseUrls and the ASPNETCORE_URLS environment variable, but will be 
-//    // overridden if you call UseIisIntegration() and host behind IIS/IIS Express
-
-//    options.Listen(IPAddress.Loopback, 5000, listenOptions =>
-//    {
-//        listenOptions.UseHttps("localhost.pfx", "PASSWORD");
-//    });
-//})

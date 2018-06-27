@@ -57,7 +57,6 @@ namespace TwitterAPI
                 app.UseDeveloperExceptionPage();
             }
 
-
             app.UseCors(builder => builder
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
