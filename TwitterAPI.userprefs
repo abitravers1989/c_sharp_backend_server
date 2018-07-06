@@ -1,30 +1,29 @@
 ﻿<Properties StartupConfiguration="{554F1242-2E04-46C3-918B-2AF2DC9E98B8}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Program.cs">
     <Files>
-      <File FileName="TwitterAPI/Controllers/BlogController.cs" Line="131" Column="2" />
-      <File FileName="TwitterAPI/Repository/Database.cs" Line="1" Column="1" />
-      <File FileName="TwitterAPI/Repository/IRepository.cs" Line="20" Column="1" />
-      <File FileName="TwitterAPI/todo.md" Line="16" Column="8" />
-      <File FileName="TwitterAPI/Models/Post.cs" Line="14" Column="37" />
-      <File FileName="TwitterAPI/Helpers/ValidationHelper.cs" Line="10" Column="44" />
-      <File FileName="TwitterAPI/Program.cs" Line="17" Column="1" />
-      <File FileName="TwitterAPI/appsettings.json" Line="19" Column="1" NotebookId="1" />
-      <File FileName="TwitterAPI/Models/Settings.cs" Line="13" Column="77" NotebookId="1" />
-      <File FileName="TwitterAPI/Repository/MongoDatabase.cs" Line="26" Column="40" NotebookId="1" />
-      <File FileName="TwitterAPI/Startup.cs" Line="29" Column="25" NotebookId="1" />
-      <File FileName="TwitterAPI/Repository/Repository.cs" Line="44" Column="13" NotebookId="1" />
+      <File FileName="TwitterAPI/Controllers/BlogController.cs" Line="14" Column="13" />
+      <File FileName="TwitterAPI/Startup.cs" Line="59" Column="13" />
+      <File FileName="TwitterAPI/Logging/LoggingEvents.cs" Line="14" Column="52" />
+      <File FileName="TwitterAPI/Program.cs" Line="23" Column="1" />
+      <File FileName="TwitterAPI/Models/Post.cs" Line="15" Column="27" />
+      <File FileName="TwitterAPI/Models/CategoryTag.cs" Line="33" Column="11" />
+      <File FileName="TwitterAPI/Repository/Repository.cs" Line="38" Column="14" />
+      <File FileName="TwitterAPI/Helpers/ValidationHelper.cs" Line="44" Column="12" />
+      <File FileName="TwitterAPI/appsettings.Development.json" Line="16" Column="8" />
+      <File FileName="TwitterAPI/appsettings.json" Line="1" Column="1" />
+      <File FileName="TwitterAPI/Properties/launchSettings.json" Line="26" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TwitterAPITests PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.ItemProperties.TwitterAPI PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPITests/ControllerTest.cs" relfile="TwitterAPITests/ControllerTest.cs" line="36" column="1" />
-      <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/Repository/Repository.cs" relfile="TwitterAPI/Repository/Repository.cs" line="48" column="1" />
-      <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/Repository/Repository.cs" relfile="TwitterAPI/Repository/Repository.cs" line="49" column="1" />
       <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/Repository/Repository.cs" relfile="TwitterAPI/Repository/Repository.cs" line="51" column="1" />
-      <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/Repository/Repository.cs" relfile="TwitterAPI/Repository/Repository.cs" line="50" column="1" />
+      <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/Repository/Repository.cs" relfile="TwitterAPI/Repository/Repository.cs" line="52" column="1" />
+      <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/Repository/Repository.cs" relfile="TwitterAPI/Repository/Repository.cs" line="54" column="1" />
+      <Breakpoint file="/Users/abigailtravers/gitDir/TwitterAPI/TwitterAPI/Repository/Repository.cs" relfile="TwitterAPI/Repository/Repository.cs" line="53" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

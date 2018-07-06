@@ -1,1 +1,0 @@
-This is the first blog post's content. At the min it only contains string
