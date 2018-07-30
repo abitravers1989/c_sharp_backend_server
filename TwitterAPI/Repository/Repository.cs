@@ -22,9 +22,12 @@ namespace TwitterAPI.Database
 
         public async Task<IEnumerable<Post>> GetAllPosts()
         {
-            //return _mongoDatabse.Posts.Count(x => true).ToList();
             return await _mongoDatabse.posts.Find(x => true).ToListAsync();
         }
+
+        //public async Task<IEnumerable<Post>> SortPostsByDate()
+        //{
+        //}
 
         public async Task<Post> GetPostByTitle(string title ){
           
@@ -35,9 +38,6 @@ namespace TwitterAPI.Database
         public async Task AddPostToDatabase(Post blogPost){
             
            await _mongoDatabse.posts.InsertOneAsync(blogPost);
-           // public CategoryTag categoryTags { get; set; }
-            //if blogPost.CategoryTag is not part of .tags then throw error 
-
         }
 
 

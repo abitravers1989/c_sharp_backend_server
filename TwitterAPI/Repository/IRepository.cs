@@ -9,7 +9,7 @@ namespace TwitterAPI.Database
     public interface IRepository
     {
         Task<IEnumerable<Post>> GetAllPosts();
-        //IEnumerable<String> GetAllPosts();
+        //Task<IEnumerable<Post>> SortPostsByDate();
         Task<Post> GetPostByTitle(string title);
         Task AddPostToDatabase(Post blogPost);
         Task<bool> UpdateBlogContent(Post blogPost);

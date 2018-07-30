@@ -5,9 +5,12 @@ namespace TwitterAPI.Helpers
 {
     public class ValidationHelper
     {
-       public bool IsValidPost(Post blogPost)
+       public bool IsValidPost(Post blogPost, string password)
         {
-            if (IsValidContent(blogPost) && IsValidUser(blogPost) && IsValidTitle((blogPost)))
+            if (IsValidContent(blogPost) 
+                && IsValidUser(blogPost) 
+                && IsValidTitle(blogPost)
+                && IsValidPassword(password))
             {
                 return true;
             }
@@ -26,6 +29,7 @@ namespace TwitterAPI.Helpers
        
         public bool IsValidUser(Post blogPost)
         {
+            //Need to make this envir variable
             return blogPost.UserName == "Abi";
         }
 
@@ -39,9 +43,11 @@ namespace TwitterAPI.Helpers
 
         }
 
-        //public bool IsValidCategory(Post blogPost){
-        //    if (blogPost.categoryTags != CategoryTag.tags)
-        //}
+        public bool IsValidPassword(string givenPassword)
+        {
+            return givenPassword == "Abi"; 
+        }
+
     }
 }
 
