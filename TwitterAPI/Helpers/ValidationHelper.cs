@@ -45,7 +45,7 @@ namespace TwitterAPI.Helpers
 
         public bool IsValidPassword(string givenPassword)
         {
-            return givenPassword == "Abi"; 
+            return givenPassword == Environment.GetEnvironmentVariable("postEnviro");
         }
 
     }

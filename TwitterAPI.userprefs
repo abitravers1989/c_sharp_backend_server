@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{554F1242-2E04-46C3-918B-2AF2DC9E98B8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Models/CategoryTag.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TwitterAPI/Helpers/ValidationHelper.cs">
     <Files>
       <File FileName="TwitterAPI/Controllers/BlogController.cs" Line="103" Column="13" />
       <File FileName="TwitterAPI/Startup.cs" Line="36" Column="62" />
@@ -7,7 +7,7 @@
       <File FileName="TwitterAPI/Program.cs" Line="23" Column="22" />
       <File FileName="TwitterAPI/Models/Post.cs" Line="11" Column="1" />
       <File FileName="TwitterAPI/Models/CategoryTag.cs" Line="36" Column="1" />
-      <File FileName="TwitterAPI/Repository/Repository.cs" Line="45" Column="1" />
+      <File FileName="TwitterAPI/Repository/Repository.cs" Line="47" Column="25" />
       <File FileName="TwitterAPI/Helpers/ValidationHelper.cs" Line="32" Column="47" />
       <File FileName="TwitterAPI/appsettings.Development.json" Line="16" Column="8" />
       <File FileName="TwitterAPI/appsettings.json" Line="1" Column="1" />
