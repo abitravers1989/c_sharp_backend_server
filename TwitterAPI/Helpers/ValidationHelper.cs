@@ -48,6 +48,11 @@ namespace TwitterAPI.Helpers
             return givenPassword == Environment.GetEnvironmentVariable("postEnviro");
         }
 
+        //public bool IsValidTitle(Post blogPost)
+        //{
+        //  if   
+        //}
+
     }
 }
 

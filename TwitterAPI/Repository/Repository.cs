@@ -36,7 +36,12 @@ namespace TwitterAPI.Database
         }
 
         public async Task AddPostToDatabase(Post blogPost){
-            
+
+           var posts = await _mongoDatabse.posts.Find(x => true).ToListAsync();
+            foreach(Post post in posts){
+                return 
+            }
+
            await _mongoDatabse.posts.InsertOneAsync(blogPost);
         }
 

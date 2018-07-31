@@ -70,7 +70,6 @@ namespace TwitterAPI.Controllers
             var password = Request.Headers["clinetPassword"];
             try
             {
-
                 if (!_validationHelper.IsValidPost(clientBlogPost, password))
                      return BadRequest("Please enter a valid post");
                 
