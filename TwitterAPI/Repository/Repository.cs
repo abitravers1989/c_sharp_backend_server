@@ -25,9 +25,6 @@ namespace TwitterAPI.Database
             return await _mongoDatabse.posts.Find(x => true).ToListAsync();
         }
 
-        //public async Task<IEnumerable<Post>> SortPostsByDate()
-        //{
-        //}
 
         public async Task<Post> GetPostByTitle(string title ){
           
@@ -39,10 +36,10 @@ namespace TwitterAPI.Database
 
            var posts = await _mongoDatabse.posts.Find(x => true).ToListAsync();
             foreach(Post post in posts){
-                return 
+                if (blogPost.Title == post.Title){
+                    await _mongoDatabse.posts.InsertOneAsync(blogPost);
+                }
             }
-
-           await _mongoDatabse.posts.InsertOneAsync(blogPost);
         }
 
 
@@ -51,14 +48,6 @@ namespace TwitterAPI.Database
             await _mongoDatabse.posts.UpdateOneAsync(post => post.Title == blogPost.Title, Builders<Post>.Update.Set(post => post.Content, blogPost.Content));
             return true;
         }
-
-        //public async Task<bool> UpdateBlogTitle(Post blogPost){
-        //    var getPostFromDB = GetPostByTitle(blogPost.Title);
-        //    var filter = Builders<Post>.Filter.Eq("Title", blogPost.Title);
-        //    var update = Builders<Post>.Update.Set(xx => xx.Title, blogPost.Title);
-        //    await _mongoDatabse.posts.UpdateOneAsync(filter, update);
-        //    return true;
-        //}
 
         public async Task<DeleteResult> RemovePost(string title){
             var filter = Builders<Post>.Filter.Eq("Title", title);
