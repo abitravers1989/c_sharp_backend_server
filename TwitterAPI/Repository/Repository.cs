@@ -34,12 +34,12 @@ namespace TwitterAPI.Database
 
         public async Task AddPostToDatabase(Post blogPost){
 
-           var posts = await _mongoDatabse.posts.Find(x => true).ToListAsync();
-            foreach(Post post in posts){
-                if (blogPost.Title == post.Title){
+           //var posts = await _mongoDatabse.posts.Find(x => true).ToListAsync();
+            //foreach(Post post in posts){
+                //if (blogPost.Title == post.Title){
                     await _mongoDatabse.posts.InsertOneAsync(blogPost);
-                }
-            }
+            //    }
+            //}
         }
 
 
